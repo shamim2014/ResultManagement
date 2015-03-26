@@ -1,0 +1,170 @@
+a:link{
+	text-decoration: none;
+}
+
+/*##########################################################*/
+#uppermenu{
+	height: 30px;
+	background-color: #646464;
+	text-align: right;
+	color: white;
+	border-bottom:3px solid #24bd0b;
+	padding-top:10px; 
+	box-shadow: 0px 5px 13px rgba(0,0,0,0.25);
+}
+header{
+	padding:45px 0 45px 0;
+}
+header h1 span{
+	color: #24bd0b;
+}
+header h1{
+	font-size: 48px;
+}
+header input{
+	border: none;
+	height:35px;
+	background-color: white;
+	text-align: right;
+	box-shadow:0 0 3px rgba(0,0,0,0.25);
+	font-family: "Ambrosia Demo Normal",ambrosia, "Times New Roman", Verdana, sans-serif;
+	font-size: 16px;
+	border-radius: 4px;
+}
+/*##########################################*/
+photo{
+ height:200px;
+ width:200px;
+ align:center;
+ }
+
+/*##########################################################*/
+
+nav{
+	font-size: 20px;
+	border-bottom: 1px solid #24bd0b;
+	border-top: 1px solid #24bd0b;
+	border-left: 1px solid #24bd0b;
+	border-right: 1px solid #24bd0b;
+	border-radius:7px;
+	padding: 10px 0;
+	height: 50px;
+	width:700px;
+	left:20%;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#CCCCCC;
+}
+nav ul{ 
+     margin-left:10px;
+	list-style-type: none;
+	padding: 0;
+}
+nav ul li{
+display:inline-block;
+position:relative;
+
+	
+}
+nav ul li a{
+	color:#000000;
+	display: block;
+	position:relative;
+	margin-right: 50px;
+}
+nav ul li.active a{
+	color: white;
+	background-color:#999999;	
+	border-radius:4px; 
+	padding: 3px 20px;
+}
+nav ul li a:hover{
+	color: #24bd0b;
+	position:relative;
+}
+
+nav ul ul 						{ width: 180px; visibility: hidden; position: absolute;  }
+nav ul ul li 					{ font-weight: normal; background: #EEEEEE; color: #000; 
+									  border-bottom: 1px solid #24bd0b;
+										border-top: 1px solid #24bd0b;
+										border-left: 1px solid #24bd0b;
+										border-right: 1px solid #24bd0b;
+										border-radius:4px;
+									   float: none; }
+nav ul ul li a					{ border-right: none; width: 100%; } 
+nav ul li:hover > ul 			{ visibility: visible; }
+
+/*##########################################################*/
+ /*#######################################3*/
+#content{
+	margin-top: 50px;
+	margin-bottom: 30px;
+}
+#content a{
+	color: #bd4a0a;
+}
+#content h1{
+	background: url(images/line.jpg) repeat-x left center;
+	text-align: center;
+	margin-bottom: 30px;
+}
+#content h1 span{
+	padding: 7px 20px;
+	background-color: white;
+	color:#000000;
+	border-top: 1px solid #24bd0b;
+	border-bottom:1px solid #24bd0b;
+	border-left:1px solid #24bd0b;
+	border-right:1px solid #24bd0b;
+	font-size: 24px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+	border-radius:4px; 
+}
+#content article h2{
+	border-bottom: 1px solid #e2e2e2;
+	padding: 2px 0px 2px 150px;;
+	margin-bottom: 3px;
+}
+#content img{
+	padding: 2px;
+	border: 1px solid #e2e2e2;
+}
+#content article p{
+	margin: 20px 0;
+	font-size:16px;
+	color:#000000;
+}
+#content hr{
+	margin: 50px 0;
+	background-color: #e2e2e2;
+	box-shadow: 0 1px 0 white;
+	}
+aside p{font-size:12px;color:#898989;margin: 0;padding: 0;}
+aside h2{
+	background: url(images/line.jpg) repeat-x left center;
+	text-align: center;
+	font-size: 18px;
+	color:#000000;
+	margin: 40px 0 30px; 
+}
+aside h3{
+	text-align: left;
+	font-size: 18px;
+	color:#000000;
+}
+aside h2:first-child{
+	margin-top: 0;
+}
+aside h2 span{
+	padding: 7px 20px;
+	background-color: #f9f9f9;
+	text-transform: uppercase;
+}
+aside hr{
+	margin: 10px 0 !important;
+}
+
+.row{
+	overflow: hidden;
+}
+/*##########################################################*/

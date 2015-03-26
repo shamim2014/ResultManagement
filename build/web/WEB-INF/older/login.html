@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login</title>
+
+    <link rel="stylesheet" href="style_login.css" media="screen" type="text/css" />
+
+</head>
+
+<body>
+
+  <div class="container">
+
+  <div id="login-form">
+
+    <h3>Login</h3>
+
+    <fieldset>
+
+      <form action="login?pagename=login" method="get">
+
+        <input type="email" required value="Email" onBlur="if(this.value=='')this.value='Email'" onFocus="if(this.value=='Email')this.value='' "> <!-- JS because of IE support; better: placeholder="Email" -->
+
+        <input type="password" required value="Password" onBlur="if(this.value=='')this.value='Password'" onFocus="if(this.value=='Password')this.value='' "> <!-- JS because of IE support; better: placeholder="Password" -->
+        <%
+          String view ="<input type='hidden' name='who' value='"+request.getAttribute("pagename")+"'/>";
+          out.println(view);
+        %>
+        <input type="submit" value="Login">
+
+        <footer class="clearfix">
+
+          <p><span class="info">?</span><a href="#">Forgot Password</a></p>
+
+        </footer>
+
+      </form>
+
+    </fieldset>
+
+  </div> <!-- end login-form -->
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+CREATE DATABASE resultmanagment;
+ 
+
+CREATE TABLE FinalExamMarks
+(
+  course_code VARCHAR(20) NOT NULL,
+  session VARCHAR(30) NOT NULL,
+  exam_roll VARCHAR(10) NOT NULL,
+  examinerId INT(6) NOT NULL,
+  questionOneMarks DECIMAL(5,2),
+  questionTwoMarks DECIMAL(5,2),
+  questionThreeMarks DECIMAL(5,2),
+  questionFourMarks DECIMAL(5,2),
+  questionFiveMarks DECIMAL(5,2),
+  questionSixMarks DECIMAL(5,2),
+  totalMarks DECIMAL(5,2),
+  PRIMARY KEY(course_code,session,exam_roll,examinerId)
+);
+
+CREATE TABLE IncourseMarkingScale
+(
+  course_code VARCHAR(20) NOT NULL,
+  session VARCHAR(30) NOT NULL,
+  incourse_exam DECIMAL(5,2),
+  viva DECIMAL(5,2),
+  attendance  DECIMAL(5,2),
+  assignment  DECIMAL(5,2),
+  presentation  DECIMAL(5,2),
+  suddent_test DECIMAL(5,2),
+  totalMarks DECIMAL(5,2),
+  PRIMARY KEY(course_code,session)
+);
+
+CREATE TABLE IncourseMark
+(
+  course_code VARCHAR(20) NOT NULL,
+  session VARCHAR(30) NOT NULL,
+  dept_roll VARCHAR(10) NOT NULL,
+  incourse_exam DECIMAL(5,2),
+  viva DECIMAL(5,2),
+  attendance  DECIMAL(5,2),
+  assignment  DECIMAL(5,2),
+  presentation  DECIMAL(5,2),
+  suddent_test DECIMAL(5,2),
+  totalMarks DECIMAL(5,2),
+  PRIMARY KEY(course_code,session,dept_roll)
+);
+
+
+
+ ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE tabulation 
+(
+   registration VARCHAR(20),
+   regi_session VARCHAR(20),
+   exam_roll VARCHAR(10) NOT NULL,
+   exam_year VARCHAR(10) NOT NULL,
+   year  VARCHAR(5)  CHECK (year IN ('1st','2nd','3rd','4th','ms')),
+semester VARCHAR(5) CHECK (semester IN ('1st','2nd')),
+ course_code1 decimal(5,2),
+ course_code2 decimal(5,2),
+ course_code3 decimal(5,2),
+ course_code4 decimal(5,2),
+ course_code5 decimal(5,2),
+ course_code6 decimal(5,2),
+ course_code7 decimal(5,2),
+ course_code8 decimal(5,2),
+ course_code9 decimal(5,2),
+ course_code10 decimal(5,2),
+ course_code11 decimal(5,2),
+ sgpa decimal(5,2),
+ PRIMARY KEY (registration,regi_session,exam_roll,year,semester)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+CREATE TABLE checkFinalResultData 
+(
+   course_code VARCHAR(20) NOT NULL,
+   session VARCHAR(30) NOT NULL,
+   batch VARCHAR(6),
+   Incourse VARCHAR(5),
+   firstFinal VARCHAR(5),
+   secondFinal VARCHAR(5),
+    CHECK(Incourse IN('YES','NO')),
+   CHECK(firstFinal IN('YES','NO')),
+  CHECK(secondFinal IN('YES','NO'))
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+CREATE TABLE IncourseExamScale
+(
+  course_code VARCHAR(20) NOT NULL,
+  session VARCHAR(30) NOT NULL,
+  batch VARCHAR(6),
+  incourse_exam1 DECIMAL(5,2),
+  incourse_exam2 DECIMAL(5,2),
+  incourse_exam3 DECIMAL(5,2),
+  incourse_exam4 DECIMAL(5,2),
+  totalIncourse DECIMAL(5,2),
+  PRIMARY KEY(course_code,session,batch)
+);
+
+
+
+

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
+
+    <!--
+    Most controllers will use the ControllerClassNameHandlerMapping above, but
+    for the index controller we are using ParameterizableViewController, so we must
+    define an explicit mapping for it.
+    -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="/BatchForm">OfficialController</prop>
+                <prop key="/CourseForm">InsertFormController</prop> 
+                <prop key="/home">HomeController</prop>
+                 <prop key="/InsertBatchInfo">BatchController</prop>
+                <prop key="/insertExamCommittee">InsertExamCommitteeController</prop>
+                <prop key="/IncourseFinalMarksForm">IncourseController</prop>
+                <prop key="/IncourseExamForm">IncourseExamController</prop>
+               <prop key="/InsertIncourseExamMarks">IncourseExamController</prop> 
+               <prop key="/insertIncourseTotal">IncourseController</prop>
+               <prop key="/InsertLabMark">LabController</prop>
+                <prop key="/login">LoginController</prop>
+                <prop key="/logout">LogoutController</prop>
+                <prop key="/LabCourse">TeacherController</prop>
+                <prop key="/LabMarkForm">LabController</prop>
+                <prop key="/LabScale">LabController</prop>
+                <prop key="/makeExamCommittee">OfficialController</prop>
+                <prop key="/1styearexamroll">OfficialController</prop>
+                <prop key="/2ndyearexamroll">OfficialController</prop>
+                <prop key="/3rdyearexamroll">OfficialController</prop>
+                <prop key="/4thyearexamroll">OfficialController</prop>
+                <prop key="/InsertExamRoll">OfficialController</prop>
+                <prop key="/makeFinalResult">TabulationController</prop>
+                <prop key="/IncourseMarkDistibution">MarkDistributionController</prop>
+                <prop key="/InsertIncourseMarkDistibution">MarkDistributionController</prop>
+                <prop key="/insertIncourseFinal">IncourseController</prop>
+                <prop key="/insertCourseSemester">CourseSemesterController</prop>
+                <prop key="/InsertCourseTeacher">CourseTeacherController</prop>
+                <prop key="/FinalMarksForm">FinalExamController</prop>
+                <prop key="/InsertFinalExamMarks">FinalExamController</prop>
+                <prop key="/TeacherForm">InsertFormController</prop>
+                <prop key="/theoryCourse">TeacherController</prop> 
+                <prop key="/studentForm">InsertFormController</prop>
+                <prop key="/CourseTeacherForm">InsertFormController</prop>
+                <prop key="/CourseSemesterForm">CourseSemesterController</prop>        
+                <prop key="/InsertTeacherInfo">TeacherInfoController</prop>
+                <prop key="/InsertStudentInfo">StudentInfoController</prop>
+                <prop key="/InsertCourseInfo">CourseController</prop>
+                <prop key="/editStudent">OfficialEditController</prop>
+                <prop key="/editTeacher">OfficialEditController</prop>
+                <prop key="/editExamCommittee">OfficialEditController</prop>
+                <prop key="/editCourse">OfficialEditController</prop>
+                <prop key="/editCourseTeacher">OfficialEditController</prop>
+                <prop key="/editSemesterCourse">OfficialEditController</prop>
+                <prop key="/ExamCourses">ExamCommitteeController</prop>
+                <prop key="/viewCourses">ViewController</prop>
+                <prop key="/viewTeachers">ViewController</prop>
+                <prop key="/viewStudents">ViewController</prop>
+                <prop key="/viewFinalmarks">ViewController</prop>
+                <prop key="/viewIncourseMarks">ViewController</prop>
+                <prop key="/viewExamCommittee">ViewController</prop>
+                <prop key="/LabMarkView">ViewController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/"
+          p:suffix=".jsp" />
+
+    <!--
+    The index controller.
+    -->
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="index" />
+    <bean name="HomeController" class="WebApp.Controller.HomeController" />
+    <bean name="LabController" class="WebApp.Controller.LabController" />
+    <bean name="LoginController" class="WebApp.Controller.LoginController" />
+    <bean name="LogoutController" class="WebApp.Controller.LogoutController" />
+    <bean name="OfficialController" class="WebApp.Controller.OfficialController" />
+    <bean name="BatchController" class="WebApp.Controller.BatchController" />
+    <bean name="InsertExamCommitteeController" class="WebApp.Controller.InsertExamCommitteeController" />
+    <bean name="InsertFormController" class="WebApp.Controller.InsertFormController" />
+    <bean name="CourseSemesterController" class="WebApp.Controller.CourseSemesterController" />
+    <bean name="CourseTeacherController" class="WebApp.Controller.CourseTeacherController" />
+    <bean name="TeacherInfoController" class="WebApp.Controller.TeacherInfoController" />
+    <bean name="StudentInfoController" class="WebApp.Controller.StudentInfoController" />
+    <bean name="CourseController" class="WebApp.Controller.CourseController" />
+    <bean name="IncourseController" class="WebApp.Controller.IncourseController" />
+    <bean name="FinalExamController" class="WebApp.Controller.FinalExamController" />
+    <bean name="MarkDistributionController" class="WebApp.Controller.MarkDistributionController" />
+    <bean name="IncourseExamController" class="WebApp.Controller.IncourseExamController" />
+    <bean name="ViewController" class="WebApp.Controller.ViewController" />
+    <bean name="OfficialEditController" class="WebApp.Controller.OfficialEditController" />
+    <bean name="TeacherController" class="WebApp.Controller.TeacherController" />
+    <bean name="ExamCommitteeController" class="WebApp.Controller.ExamCommitteeController" />
+    <bean name="TabulationController" class="WebApp.Controller.TabulationController" />
+</beans>

@@ -1,0 +1,146 @@
+CREATE TABLE User 
+(
+Email VARCHAR(30) NOT NULL, 
+PassWord VARCHAR(30) NOT NULL, 
+Type VARCHAR(30) NOT NULL, 
+PRIMARY KEY (Email))
+ ENGINE = InnoDB
+
+
+
+CREATE TABLE Course
+(
+ course_code VARCHAR(20) NOT NULL PRIMARY KEY,
+ title VARCHAR(50) NOT NULL,
+ credit DECIMAL(5,1),
+ course_type VARCHAR(20) NOT NULL,
+ year  VARCHAR(5),
+ semester VARCHAR(5),
+ CHECK (year IN ('1st','2nd','3rd','4th')),
+ CHECK (semester IN ('1st','2nd')),
+ CHECK(course_type IN('lab','theory'))
+);
+
+CREATE TABLE Student
+(
+ name VARCHAR(50) NOT NULL,
+ dept_roll VARCHAR(10) NOT NULL,
+ current_session VARCHAR(30),
+ gender VARCHAR(10),  
+ batch VARCHAR(10),
+ exam_roll VARCHAR(10),
+ email  VARCHAR(50) UNIQUE,
+ phone VARCHAR(50),
+ regi_session VARCHAR(20),
+ registration VARCHAR(20),
+ hall VARCHAR(30),
+PRIMARY KEY (regi_session,registration),
+CHECK (gender IN ('Male','Female'))
+);
+
+CREATE TABLE Teacher
+(
+ email  VARCHAR(50) NOT NULL PRIMARY KEY,
+ name VARCHAR(50) NOT NULL,
+ dept_name VARCHAR(50) NOT NULL,
+ designation VARCHAR(50) NOT NULL,
+ phone VARCHAR(50)
+);
+CREATE TABLE ExamCommittee
+(
+ chairmanEmail VARCHAR(50) NOT NULL,
+ firstMemberEmail VARCHAR(50) NOT NULL,
+ secondMemberEmail VARCHAR(50) NOT NULL,
+ year  VARCHAR(6) NOT NULL, 
+ session VARCHAR(30),
+ PRIMARY KEY (year,session),
+ CHECK (year IN ('1st','2nd','3rd','4th'))
+);
+
+CREATE TABLE CourseTeacher
+(
+  course_code VARCHAR(20) NOT NULL,
+  session VARCHAR(30) NOT NULL,
+  email  VARCHAR(50) NOT NULL,
+ PRIMARY KEY(course_code,session)
+);
+
+CREATE TABLE CourseSemester 
+(
+  year  VARCHAR(5),
+  semester VARCHAR(5),
+ course_code1 VARCHAR(20),
+ course_code2 VARCHAR(20),
+ course_code3 VARCHAR(20),
+ course_code4 VARCHAR(20),
+ course_code5 VARCHAR(20),
+ course_code6 VARCHAR(20),
+ course_code7 VARCHAR(20),
+ course_code8 VARCHAR(20),
+ course_code9 VARCHAR(20),
+ course_code10 VARCHAR(20),
+ course_code11 VARCHAR(20),
+ PRIMARY KEY (year,semester),
+ CHECK (year IN ('1st','2nd','3rd','4th')),
+ CHECK (semester IN ('1st','2nd'))
+);
+
+CREATE TABLE TheorySubject
+(
+ firstExaminerEmail VARCHAR(50) NOT NULL,
+ secondExaminerEmail VARCHAR(50),
+ course_code VARCHAR(20) NOT NULL,
+ session VARCHAR(30) NOT NULL,
+ PRIMARY KEY (course_code,session)
+);
+
+CREATE TABLE Lab
+(
+ firstExaminerEmail VARCHAR(50) NOT NULL,
+ secondExaminerEmail VARCHAR(50),
+ course_code VARCHAR(20) NOT NULL,
+ session VARCHAR(30) NOT NULL,
+ PRIMARY KEY (course_code,session)
+);
+
+CREATE TABLE LabMarkingScale
+(
+  course_code VARCHAR(20) NOT NULL,
+  session VARCHAR(30) NOT NULL,
+  lab_exam DECIMAL(5,2),
+  viva DECIMAL(5,2),
+  attendance  DECIMAL(5,2),
+  assignment  DECIMAL(5,2),
+  presentation  DECIMAL(5,2),
+  assessment DECIMAL(5,2),
+  report  DECIMAL(5,2),
+  project DECIMAL(5,2),
+  totalMarks DECIMAL(5,2),
+  PRIMARY KEY(course_code,session)
+);
+
+CREATE TABLE LabMarks
+(
+  course_code VARCHAR(20) NOT NULL,
+  session VARCHAR(30) NOT NULL,
+  dept_roll VARCHAR(30) NOT NULL,
+  batch VARCHAR(30) NOT NULL,
+  lab_exam DECIMAL(5,2),
+  viva DECIMAL(5,2),
+  attendance  DECIMAL(5,2),
+  assignment  DECIMAL(5,2),
+  presentation  DECIMAL(5,2),
+  assessment DECIMAL(5,2),
+  report  DECIMAL(5,2),
+  project DECIMAL(5,2),
+  totalMarks DECIMAL(5,2),
+  PRIMARY KEY(course_code,session,dept_roll)
+);
+CREATE TABLE BatchSemester 
+(
+   batch VARCHAR(20),
+   year  VARCHAR(5)  CHECK (year IN ('1st','2nd','3rd','4th','ms')),
+semester VARCHAR(5) CHECK (semester IN ('1st','2nd')),
+ current_session VARCHAR(20),
+ PRIMARY KEY (batch)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

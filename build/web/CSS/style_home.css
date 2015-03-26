@@ -1,0 +1,123 @@
+#header_container {
+	border-bottom: 1px solid #2BB1E0;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5)  3px 3px 5px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+	box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+}
+.container {
+	padding: 0 1em 0 1em;
+}
+#box{
+    margin-top:2em;
+	width:200px;
+	height:200px;
+	float:left;
+	margin-left:5%;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border: 7px 7px 7px 7px; 
+}
+#main-nav ul { 
+    font: normal 100% 'News Cycle', arial;
+	float: right;
+	margin-right:5%;
+	list-style: none;
+	margin-top: 6.5em;
+	padding: 1em 2em 1.25em 2em; 
+	background: #2BB1E0;
+	border-radius:7px; 	
+	box-shadow: 0 1px 0 white,inset 0 1px 0 white;
+}
+
+#main-nav ul li { 
+	display: inline-block; 
+	text-decoration:none;
+	text-align: center;
+	padding: 0.35em 0em 0.35em 0em; 
+	border-radius: 0.5em; 
+}
+
+#main-nav ul li a { 
+	color: #fff; 
+	text-decoration:none;
+	padding: 0.5em 1em 0.75em 1em;
+}
+
+#main-nav ul li a.active, #main-nav ul li a:hover { 
+	color: #2BB1E0; 
+    background: #FFF;	
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border: 7px 7px 7px 7px; 
+}
+#main { 
+margin-top:320px;
+        background: url(images/templatemo_content_bg.jpg) repeat;
+	margin-left:5%;
+	margin-right:5%;
+	height:350px;
+	border-radius:7px;
+}
+#sidebar    {
+    width: 40%;
+	margin-left:2%;
+	margin-top:2%;
+    height: 90%;
+    background: white;
+    float: left;
+	border-radius:7px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5)  3px 3px 5px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+	box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+}
+
+#page-wrap  {
+    width: 40%;
+    background: #000066;
+	margin-right:2%;
+	margin-top:2%;
+    height: 90%;
+    float:right;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5)  3px 3px 5px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+	box-shadow: rgba(0, 0, 0, 0.5) 3px 3px 5px;
+}
+	  
+header{
+	padding:45px 0 45px 0;
+}
+header h1 span{
+    margin-left:4%;
+	color: #24bd0b;
+}
+header h3 span{
+	color:#000099;
+	font-size:24px;
+}
+header h2 span{
+        margin-left:4%;
+	color:#000099;
+	font-size:14px;
+}
+
+#footer { 
+        margin-top:50px;
+        background: url(images/templatemo_content_bg.jpg) repeat;
+	margin-left:5%;
+	margin-right:5%;
+	height:100px;
+	border-radius:7px;
+        padding-top: 25px;
+        text-align: center;
+        font-size: 15px;
+        font-family: sans-serif;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 23, 2015, 12:12:32 PM
+    Author     : USER
+*/
+

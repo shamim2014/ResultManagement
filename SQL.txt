@@ -1,0 +1,43 @@
+SELECT exam_roll, course_code,
+SESSION , avg( totalMarks ) AS totalMarks
+FROM finalexammarks
+WHERE course_code = 'CSE-1101'
+AND SESSION = '2014-2015'
+GROUP BY exam_roll
+
+SELECT *
+FROM student
+NATURAL JOIN incoursemark
+WHERE student.batch = '17'
+AND course_code = 'CSE-1101'
+
+
+SELECT hall,registration,regi_session,year,semester,course_code,session,dept_roll, exam_roll,incourseMarks,finalMarks
+FROM (
+SELECT exam_roll, course_code,
+SESSION , avg( totalMarks ) AS finalMarks
+FROM finalexammarks
+WHERE course_code = 'CSE-1101'
+AND session = '2014-2015'
+GROUP BY exam_roll
+) AS T
+NATURAL JOIN (
+SELECT dept_roll, exam_roll,totalMarks as incourseMarks,
+session, course_code,year,semester,regi_session,registration,hall
+FROM student
+NATURAL JOIN incoursemark
+WHERE student.batch = '17'
+AND course_code = 'CSE-1101'
+) AS R order by exam_roll
+
+
+
+SELECT *
+FROM course
+NATURAL JOIN theorysubject
+WHERE firstExaminerEmail = 'mossadek@gmail.com'
+AND SESSION = (
+SELECT DISTINCT (
+current_session
+)
+FROM batchsemester )
